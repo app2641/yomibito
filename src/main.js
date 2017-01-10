@@ -25,7 +25,7 @@ var init = function () {
 function doPost (e) {
   var app = init();
   var payload = app.slack.receiveMessage(e.parameters);
-  if (payload.user == '詠み人さん') return false;
+  if (payload.user == 'slackbot') return false;
 
   var xml = app.parser.parse(payload.message);
   var ret = app.reviewer.find(xml);

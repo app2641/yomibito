@@ -66,9 +66,9 @@ loadReviewer = function () {
     var reading_length = this.reading.replace(/[ぁぃぅぇぉゃゅょァィゥェォャュョ…]/g, '').length;
 
     if ((this.currentRegion() + reading_length) <= this.currentRhythm()) {
-      if ((this.currentRegion() + reading_length) == this.currentRhythm() && this.surface.match(/^っ|ッ$/)) {
+      if ((this.currentRegion() + reading_length) == this.currentRhythm() && this.surface.match(/っ|ッ$/)) {
         return false;
-      } else if (this.currentRegion() == 0 && this.region.length == 1 && this.pos == '助動詞') {
+      } else if (this.currentRegion() == 0 && this.region.length == 1 && (this.pos == '助動詞' || this.pos == '助詞')) {
         return false;
       }
 
